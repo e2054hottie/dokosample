@@ -5,8 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-    <p>Hello World!</p>
-    <c:set var="hello" value="${3 + 12 / 5}" />
-    <c:out value="${hello}" />
+    <a href="/user/signup">サインアップ</a>
 </body>
 </html>
