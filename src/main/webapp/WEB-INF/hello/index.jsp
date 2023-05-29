@@ -6,5 +6,7 @@
 </head>
 <body>
     <a href="/user/signup">サインアップ</a>
+    <br>
+    <a href="/user/login">ログイン</a>
 </body>
 </html>
