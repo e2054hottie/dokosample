@@ -5,8 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="/user/signup">サインアップ</a>
-    <br>
-    <a href="/user/login">ログイン</a>
+    <ul>
+        <li><a href="/user/signup">サインアップ</a></li>
+        <li><a href="/user/login">ログイン</a></li>
+    </ul>
+    
 </body>
 </html>

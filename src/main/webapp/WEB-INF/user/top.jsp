@@ -6,5 +6,6 @@
 </head>
 <body>
 ${currentUser.name}さんこんにちは。
+<a href="/user/logout">ログアウト</a>
 </body>
 </html>
