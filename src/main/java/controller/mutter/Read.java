@@ -1,6 +1,7 @@
 package controller.mutter;
 
 import model.user.User;
+import model.mutter.Mutter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -25,6 +26,11 @@ public class Read extends HttpServlet{
 
         // セッションスコープからログイン済みユーザーを取り出す
         User user = (User) session.getAttribute("currentUser");
+
+        ArrayList<Mutter> mutters = Mutter.indexMutters(user);
+        
+        req.setAttribute("mutters", mutters);
+        req.setAttribute("fun", "楽しい");
 
         //top.jspの内容を表示
         RequestDispatcher dispatcher = req.getRequestDispatcher("/WEB-INF/user/top.jsp");
