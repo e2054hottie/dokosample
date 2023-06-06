@@ -29,6 +29,42 @@ public class Repository{
         }
     }
 
+    public static ArrayList<Mutter> indexMutters() { 
+        Connection connection = null;
+        PreparedStatement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            // nameで検索
+            String sql = "select * from mutters order by id desc";
+
+            connection = Client.create();
+            stmt = connection.prepareStatement(sql);
+            rs = stmt.executeQuery();
+
+            // つぶやきの一覧を保存する配列
+            ArrayList<Mutter> mutters = new ArrayList<>();
+
+            // rsがある限り保存
+            while (rs.next()) {
+                Mutter mutter = new Mutter(
+                        rs.getString("name"),
+                        rs.getString("text")
+                );
+                // 配列に保存
+                mutters.add(mutter);
+            }
+            return mutters;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            Client.close(connection, stmt, rs);
+        }
+    
+    }
+
     // そのユーザーのつぶやき一覧(配列)を取得
     public static ArrayList<Mutter> indexMutters(User user){
         Connection connection = null;

@@ -1,6 +1,6 @@
 *,
 *:before,
-*:after {
+*:after { 
   -webkit-box-sizing: inherit;
   box-sizing: inherit;
 }
@@ -31,6 +31,10 @@ html {
   letter-spacing: 0.1em;
   color: #212529;
   border-radius: 0.5rem;
+}
+
+.contents {
+  text-align: center;
 }
 
 .mutter {
