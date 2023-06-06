@@ -8,21 +8,31 @@
     <title>TOP画面</title>
 </head>
 <body>
-${currentUser.name}さんこんにちは。
-<br>
+${currentUser.name}さんこんにちは。<br>
+
+<div class="contents">
+    <a href="/mutter/read">ホーム</a>
+    <a href="/mutter/read?name=${currentUser.name}">自分のつぶやき</a>
+    <a href="/user/logout">ログアウト</a>
+</div>
+
+<br> 
 <a href="/mutter/insert" class="btn mutter">つぶやく</a>
-<a href="/user/logout">ログアウト</a>
+
 <br>
 
 <c:forEach items = "${mutters}" var = "mutter">
     <div class="mutterArea">
         <div class="mutteredBy">
-            ${currentUser.name}<br>
+            <a href="/mutter/read?name=${mutter.name}">${mutter.name}</a> <br>
         </div>
         <div class="mutterText">
             ${mutter.text}<br>
         </div>
-        
+        <!-- <c:if test="${mutter.name== currentUser.name}">
+            <a href="/mutter/read">編集</a>
+            <a href="/mutter/read">削除</a>
+        </c:if> -->
     </div>
 </c:forEach>
 </body>

@@ -35,5 +35,10 @@ public class Mutter{
     public static ArrayList<Mutter> indexMutters(User user){
         return Repository.indexMutters(user);
     }
+
+    public static ArrayList<Mutter> indexMutters(){ 
+        return Repository.indexMutters();
+    }
+    
     
 }
